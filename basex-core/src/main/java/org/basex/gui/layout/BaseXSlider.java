@@ -154,8 +154,8 @@ public final class BaseXSlider extends BaseXPanel {
 
   @Override
   public void mouseDragged(final MouseEvent e) {
-    final double prop = (max - min) * (mouseX - e.getX()) /
-      (getWidth() - SLIDERW);
+    final double prop = (max - min) / (getWidth() - SLIDERW)
+      * (mouseX - e.getX());
 
     final int old = value;
     value = Math.max(min, Math.min(max, (int) (oldValue - prop)));
